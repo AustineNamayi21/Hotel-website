@@ -1,0 +1,94 @@
+/* Reset and base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+  }
+  
+  .header {
+    background: linear-gradient(to bottom right, #0a0f11, #182022);
+  }
+  
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: white;
+  }
+  
+  .nav-list a {
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-list a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-banner {
+    background: linear-gradient(to bottom right, #0a0f11, #182022);
+    color: white;
+  }
+  
+  .contact-banner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+  }
+  
+  .underline {
+    width: 60px;
+    height: 2px;
+    background: #e2c98f;
+    margin: 20px auto;
+  }
+  
+  .map-and-image {
+    min-height: 400px;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .contact-form-section h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    border-radius: 0;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+  }
+  
+  .btn-custom {
+    background-color: #f2e2b6;
+    color: black;
+    border: none;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #d5c39a;
+  }
+  
+  .social-icons a {
+    font-size: 20px;
+    color: black;
+  }
+  
+  .social-icons a:hover {
+    color: #a58c5b;
+  }
+  
