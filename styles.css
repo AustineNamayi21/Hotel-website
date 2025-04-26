@@ -24,7 +24,7 @@ body {
 
 /* SCREEN 1: HERO (1.png) */
 .screen-1 {
-    background: linear-gradient(rgba(0,0,0,0.5), url('beach-resort.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('beach-resort.jpg') center/cover;
     height: 100vh;
     color: white;
     position: relative;
@@ -71,12 +71,20 @@ body {
     font-weight: 700;
 }
 
-/* Booking form styles match 1.png exactly */
+/* Booking form styles for SCREEN 1 */
 .screen-1 .booking-form {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     max-width: 700px;
     margin: 0 auto;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.screen-1 .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .screen-1 .form-row {
@@ -99,11 +107,14 @@ body {
     color: #666;
 }
 
-.screen-1 input, .screen-1 select {
+.screen-1 input,
+.screen-1 select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     background: white;
+    border-radius: 4px; /* Optional: Adds rounded corners */
+    font-size: 14px;
 }
 
 .screen-1 .search-btn {
@@ -115,6 +126,12 @@ body {
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.screen-1 .search-btn:hover {
+    background: var(--light-gold); /* Optional: Adds hover effect */
 }
 
 /* SCREEN 2: LUXURY RESORT (2.png) */
