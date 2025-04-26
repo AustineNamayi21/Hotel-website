@@ -1,3 +1,13 @@
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -9,22 +19,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('bg-white');
-        navbar.classList.add('navbar-light');
-        navbar.classList.remove('bg-light');
-    } else {
-        navbar.classList.remove('bg-white');
-        navbar.classList.remove('navbar-light');
-        navbar.classList.add('bg-light');
+// Set current year for copyright
+document.addEventListener('DOMContentLoaded', function() {
+    const year = new Date().getFullYear();
+    const copyrightElement = document.querySelector('.copyright p');
+    if (copyrightElement) {
+        copyrightElement.textContent = `Copyright © ${year} Silver Palm Spa & Resort`;
     }
-});
-
-// Initialize tooltips
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
+    
+    // Set default dates for booking form
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    const formatDate = (date) => {
+        return date.toISOString().split('T')[0];
+    };
+    
+    const checkInInput = document.querySelector('.booking-form input[type="date"]:first-of-type');
+    const checkOutInput = document.querySelector('.booking-form input[type="date"]:last-of-type');
+    
+    if (checkInInput && checkOutInput) {
+        checkInInput.value = formatDate(today);
+        checkOutInput.value = formatDate(tomorrow);
+        checkInInput.min = formatDate(today);
+        checkOutInput.min = formatDate(tomorrow);
+    }
 });
