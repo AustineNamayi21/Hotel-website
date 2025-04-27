@@ -16,6 +16,7 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     color: var(--dark-gray);
     scroll-behavior: smooth;
+    padding-top: 70px;
 }
 
 .container {
@@ -30,6 +31,72 @@ h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
+}
+
+/* Navigation Bar Fixes */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(26, 42, 58, 0.9);
+    padding: 15px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+nav .menu {
+    display: flex;
+    gap: 20px;
+}
+
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav .menu a.active {
+    color: #c4a76c;
+}
+
+nav .menu a:hover {
+    color: #c4a76c;
+}
+
+nav .menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #c4a76c;
+    transition: width 0.3s;
+}
+
+nav .menu a:hover::after {
+    width: 100%;
 }
 
 /* Header Styles */
