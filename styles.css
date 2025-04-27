@@ -22,38 +22,85 @@ body {
     padding: 0 20px;
 }
 
-/* SCREEN 1: HERO (1.png) */
-.screen-1 {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('beach-resort.jpg') center/cover;
-    height: 100vh;
-    color: white;
-    position: relative;
+/* NAVIGATION STYLES */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(26, 42, 58, 0.8);
+    padding: 15px 0;
+    transition: all 0.3s ease;
 }
 
-.screen-1 nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 0;
+nav.scrolled {
+    background-color: var(--navy);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .screen-1 .logo {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.screen-1 .menu {
+    display: flex;
+    gap: 30px;
 }
 
 .screen-1 .menu a {
     color: white;
     text-decoration: none;
-    margin-left: 25px;
     font-size: 13px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.screen-1 .menu a:hover {
+    color: var(--gold);
+}
+
+.screen-1 .menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.screen-1 .menu a:hover::after {
+    width: 100%;
+}
+
+/* SCREEN 1: HERO (1.png) */
+.screen-1 {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('beach-resort.jpg') center/cover;
+    height: 100vh;
+    color: white;
+    position: relative;
+    padding-top: 80px; /* To account for fixed nav */
+}
+
+.screen-1 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .screen-1 .hero-content {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -77,8 +124,8 @@ body {
     padding: 30px;
     max-width: 700px;
     margin: 0 auto;
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .screen-1 .form-grid {
@@ -87,14 +134,7 @@ body {
     gap: 20px;
 }
 
-.screen-1 .form-row {
-    display: flex;
-    margin-bottom: 20px;
-}
-
 .screen-1 .form-group {
-    flex: 1;
-    margin: 0 10px;
     text-align: left;
 }
 
@@ -113,7 +153,7 @@ body {
     padding: 12px;
     border: 1px solid #ddd;
     background: white;
-    border-radius: 4px; /* Optional: Adds rounded corners */
+    border-radius: 4px;
     font-size: 14px;
 }
 
@@ -128,15 +168,17 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 20px;
 }
 
 .screen-1 .search-btn:hover {
-    background: var(--light-gold); /* Optional: Adds hover effect */
+    background: var(--light-gold);
 }
 
+/* Other screen styles remain the same as in your original CSS */
 /* SCREEN 2: LUXURY RESORT (2.png) */
 .screen-2 {
-    padding: 100px 0;
+    padding: 150px 0 100px;
     text-align: center;
 }
 
@@ -171,7 +213,7 @@ body {
 
 /* SCREEN 3: ROOM TYPES (3.png) */
 .screen-3 {
-    padding: 80px 0;
+    padding: 100px 0;
     background: var(--light-gray);
 }
 
@@ -201,7 +243,7 @@ body {
 
 /* SCREEN 4: SPECIAL OFFER (4.png) */
 .screen-4 {
-    padding: 100px 0;
+    padding: 150px 0 100px;
     background: var(--navy) url('honeymoon-bg.jpg') center/cover;
     color: white;
     text-align: center;
@@ -238,7 +280,7 @@ body {
 
 /* SCREEN 5: SPA & WELLNESS (5.png) */
 .screen-5 {
-    padding: 100px 0;
+    padding: 150px 0 100px;
     text-align: center;
 }
 
@@ -265,13 +307,19 @@ body {
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.screen-5 button:hover {
+    background: var(--light-gold);
 }
 
 /* SCREEN 6: FOOTER (6.png) */
 .screen-6 {
     background: var(--navy);
     color: white;
-    padding: 60px 0 30px;
+    padding: 100px 0 30px;
 }
 
 .screen-6 .footer-grid {
@@ -299,6 +347,15 @@ body {
     color: #aaa;
     font-size: 14px;
     line-height: 1.8;
+}
+
+.screen-6 a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.screen-6 a:hover {
+    color: var(--gold);
 }
 
 .screen-6 input[type="email"] {
@@ -331,6 +388,7 @@ body {
     }
     .screen-3 .room-types {
         flex-direction: column;
+        gap: 40px;
     }
     .screen-6 .footer-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -340,16 +398,22 @@ body {
 @media (max-width: 768px) {
     .screen-1 nav {
         flex-direction: column;
-        align-items: center;
+        padding: 15px 0;
     }
     .screen-1 .menu {
-        margin-top: 20px;
-    }
-    .screen-1 .menu a {
-        margin: 0 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
     .screen-1 h1 {
         font-size: 36px;
+    }
+    .screen-1 .booking-form {
+        padding: 20px;
+    }
+    .screen-1 .form-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -359,5 +423,12 @@ body {
     }
     .screen-6 .footer-grid {
         grid-template-columns: 1fr;
+    }
+    .screen-2 h1,
+    .screen-4 h1 {
+        font-size: 36px;
+    }
+    .screen-5 h2 {
+        font-size: 28px;
     }
 }
