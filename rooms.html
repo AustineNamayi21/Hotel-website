@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Silver Palm - Rooms</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="rooms.css"/>
+    <style>
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--sp-gold);
+            border: none;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--sp-white);
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background: #a3834f;
+        }
+        .dark-theme {
+            --sp-white: #1e1e1e;
+            --sp-navy: #f5f5f5;
+            --sp-gray: #cccccc;
+            --sp-light: #2c2c2c;
+            --sp-gold: #d4af37; /* Adjusted gold for better contrast */
+        }
+
+        .dark-theme body {
+            color: var(--sp-black); /* Ensure text is visible */
+            background: var(--sp-white); /* Dark background */
+        }
+
+        .dark-theme .sp-room-card {
+            background: var(--sp-white); /* Light gray background for room cards */
+            color: var(--sp-white); /* Dark text for contrast */
+        }
+
+        .dark-theme .sp-room-title {
+            color: var(--sp-gold); /* Gold color for room titles */
+        }
+
+        .dark-theme .sp-room-desc {
+            color: var(--sp-black); /* Ensure description text is visible */
+        }
+
+        .dark-theme .sp-details-box {
+            background: var(--sp-light); /* Slightly darker background for details box */
+            color: var(--sp-navy); /* Text color for details */
+        }
+
+        .dark-theme .sp-price-info {
+            color: var(--sp-gold); /* Gold color for price info */
+        }
+
+        .dark-theme .sp-btn {
+            background: var(--sp-gold); /* Gold buttons */
+            color: var(--sp-white); /* White text on buttons */
+        }
+
+        .dark-theme .sp-btn:hover {
+            background: #a3834f; /* Slightly darker gold on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="sp-header">
+        <div class="container">
+            <div class="sp-logo">SILVER PALM</div>
+            <nav class="sp-nav">
+                <a href="index.html">THE RESORT</a>
+                <a href="rooms.html" class="active">ROOMS</a>
+                <a href="index.html#dining">DINING</a>
+                <a href="index.html#spa">SPA & WELLNESS</a>
+                <a href="conferences.html">CONFERENCES</a>
+                <a href="index.html#weddings">WEDDINGS</a>
+                <a href="index.html#gallery">GALLERY</a>
+                <a href="index.html#contact">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Move the theme toggle button below the header -->
+    <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
+
+    <div id="room-sections"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="rooms.js"></script>
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+:root {
+    --sp-gold: #B89B5F;
+    --sp-navy: #000000;
+    --sp-gray: #000000;
+    --sp-light: #F8F5F0;
+    --sp-white: #FFFFFF;
+    --sp-black: #000000;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--sp-navy);
+    background: var(--sp-white);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+    padding-top: 70px;
+}
+
+/* Navigation Bar Styles */
+.sp-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(26, 42, 58, 0.9);
+    padding: 15px 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sp-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sp-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.sp-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    position: relative;
+}
+
+.sp-nav a.active {
+    color: #c4a76c;
+}
+
+.sp-nav a:hover {
+    color: #c4a76c;
+}
+
+.sp-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #c4a76c;
+    transition: width 0.3s;
+}
+
+.sp-nav a:hover::after {
+    width: 100%;
+}
+
+.sp-room-section {
+    min-height: 100vh;
+    padding: 80px 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.sp-room-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+}
+
+.sp-room-card {
+    background: rgba(255,255,255,0.92);
+    padding: 52px;
+    position: relative;
+    z-index: 2;
+}
+
+.sp-room-title {
+    font-family: 'Gilda Display', serif;
+    font-size: 32px;
+    color: var(--sp-gold);
+    margin-bottom: 26px;
+}
+
+.sp-room-desc {
+    font-size: 15px;
+    color: var(--sp-navy);
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+.sp-room-image {
+    width: 100%;
+    height: auto;
+    margin: 30px 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+.sp-room-image:hover {
+    transform: scale(1.02);
+}
+
+.sp-continue-link {
+    color: var(--sp-gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sp-gold);
+}
+
+.sp-details-box {
+    margin-top: 42px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.sp-details-title {
+    font-family: 'Gilda Display', serif;
+    font-size: 22px;
+    color: var(--sp-navy);
+    margin-bottom: 22px;
+}
+
+.sp-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: var(--sp-gray);
+}
+
+.sp-details-list li {
+    margin-bottom: 14px;
+    padding-left: 16px;
+    position: relative;
+}
+.sp-details-list li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: var(--sp-gold);
+}
+
+.sp-detail-label {
+    font-weight: 500;
+    color: var(--sp-navy);
+}
+
+.sp-booking-card {
+    background: var(--sp-white);
+    padding: 48px 42px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.sp-price-info {
+    margin-bottom: 36px;
+}
+.sp-category {
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--sp-gray);
+    margin-bottom: 6px;
+}
+.sp-price {
+    font-size: 16px;
+    color: var(--sp-navy);
+}
+.sp-price span {
+    color: var(--sp-gold);
+    font-weight: 600;
+}
+
+.sp-action-buttons {
+    display: flex;
+    gap: 14px;
+}
+.sp-btn {
+    padding: 13px 32px;
+    font-size: 11px;
+    letter-spacing: 1.9px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--sp-gold);
+    transition: all 0.3s ease;
+}
+.sp-view-btn {
+    background: transparent;
+    color: var(--sp-gold);
+}
+.sp-view-btn:hover {
+    background: var(--sp-gold);
+    color: var(--sp-white);
+}
+.sp-book-btn {
+    background: var(--sp-gold);
+    color: var(--sp-white);
+}
+.sp-book-btn:hover {
+    background: transparent;
+    color: var(--sp-gold);
+}
+
+/* Dark Theme Overrides */
+.dark-theme {
+    --sp-white: #1e1e1e;
+    --sp-navy: #f5f5f5;
+    --sp-gray: #cccccc;
+    --sp-light: #2c2c2c;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute; /* Change to absolute positioning */
+    top: 90px; /* Place the button below the navigation bar */
+    right: 20px;
+    background: var(--sp-gold);
+    border: none;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--sp-white);
+    cursor: pointer;
+    z-index: 1100; /* Ensure it appears above other elements */
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
